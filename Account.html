@@ -3,22 +3,41 @@
     
 <head>
 <title>Vehicle</title>
+<script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="code.js"></script>
 <link rel="stylesheet" type="text/css" href="account.css">
 </head>
 <body>
     <div id="inputInfo">
-        <form id="inputForm">
+        <form id="inputForm" action="javascript:void(0);">
             <div id="sellerInputForm">
+				<div id="sellerNameInput">
                     <label for="sname">Seller Name</label>
                     <input type="text" id="sname" name="firstname" placeholder="Seller name..">
-                
+					<p class="errorMessage" id="snameErrorMessage"></p>
+				</div>
+                <div id="sellerAddressInput">
                     <label for="address">Address</label>
-                    <input type="text" id="address" name="lastname" placeholder="Address..">
-        
+                    <input type="text" id="address" name="address" placeholder="Address..">
+					<p class="errorMessage" id="addressErrorMessage"></p>
+				</div>
+        		<div id="sellerPhoneInput">
                     <label for="phoneNum">Phone Number</label>
-                    <input type="text" id="phoneNum" name="lastname" placeholder="Ex: (123)123-1234 ..">
+                    <input type="text" id="phoneNum" name="phonenum" placeholder="Ex: (123)123-1234 or 123-123-1234">
+					<p class="errorMessage" id="phoneErrorMessage"></p>
+				</div>
             </div>
             <div id="vehicleInputForm">
+				<div class="vehicleInput">
+                    <label for="vehicleMake">Make</label>
+                    <input type="text" id="make" name="make">
+					<p class="errorMessage" id="makeErrorMessage"></p>
+                </div>
+                <div class="vehicleInput">
+                    <label for="vehicleModel">Model</label>
+                    <input type="text" id="model" name="model">
+					<p class="errorMessage" id="modelErrorMessage"></p>
+                </div>    
                 <div class="vehicleInput"> 
                     <label for="vehicleYear">Vehicle's year</label>
                     <select id="vehicleYear" name="year">
@@ -44,47 +63,8 @@
                         <option value="2000">2000</option>
                     </select>
                 </div>
-                <div class="vehicleInput">
-                    <label for="vehicleMake">Make</label>
-                    <select id="make" name="make">
-                        <option value="Acura">Acura</option>
-                        <option value="Alfa-Romeo">Alfa Romeo</option>
-                        <option value="Aston-Martin">Aston Martin</option>
-                        <option value="Audi">Audi</option>
-                        <option value="Bentley">Bentley</option>
-                        <option value="BMW">BMW</option>
-                        <option value="Buick">Buick</option>
-                        <option value="Cadillac">Cadillac</option>
-                        <option value="Chevrolet">Chevrolet</option>
-                        <option value="Chrysler">Chrysler</option>
-                        <option value="Deawoo">Deawoo</option>
-                        <option value="Dodge">Dodge</option>
-                        <option value="Ferrari">Ferrari</option>
-                        <option value="FIAT">FIAT</option>
-                        <option value="Fisker">Fisker</option>
-                        <option value="Ford">Ford</option>
-                        <option value="Freightliner-Light-Duty">Freightliner Light Duty</option>
-                        <option value="Genesis">Genesis</option>
-                        <option value="GMC">GMC</option>
-                        <option value="Honda">Honda</option>
-                        <option value="Hummer">Hummer</option>
-                        <option value="Huyndai">Huyndai</option>
-                        <option value="INFINITI">INFINITI</option>
-                        <option value="Isuzu">Isuzu</option>
-                        <option value="Jagura">Jagura</option>
-                        <option value="Jeep">Jeep</option>
-                        <option value="Karma-Automotive">Karma Automotive</option>
-                        <option value="Kia">Kia</option>
-                        <option value="Lamborghini">Lamborghini</option>
-                        <option value="Land-Rover">Land Rover</option>
-                    </select>
-                </div>
-                <div class="vehicleInput">
-                    <label for="vehicleModel">Model</label>
-                    <input type="text" id="model" name="model">
-                </div>       
             </div>
-            <input type="submit" value="Save">
+            <input type="submit" value="Save" onClick="return addCar()">
         </form>
     </div>
     <div id = "outputTable">
